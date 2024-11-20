@@ -1,0 +1,79 @@
+---
+sidebar:
+    order: 1
+title: "Getting Started"
+tags:
+  - getting started
+  - widgetProps
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+Let's find out how to set up **Express Checkout** (also called **xcheckout** or **XCO**).
+
+Before you get started, make sure to **check** with the express checkout team that **your domain is allowed.**
+Most likely `localhost:...` for local dev
+
+Currently, we have to setup this manually, but soon, this will be handled automatically.
+
+## Install Express Checkout Widget
+
+The widget is deployed on a private github package repository, so you need to authenticate to install it.
+
+You can ask for a token to the XCO team.
+
+Then, install the widget using your favorite package manager:
+
+<Tabs syncKey="packageManager">
+  <TabItem label="npm" default>
+      ```bash
+      npm install @xcheckout/widget
+      ```
+  </TabItem>
+  <TabItem label="yarn">
+      ```bash
+      yarn add @xcheckout/widget
+      ```
+  </TabItem>
+  <TabItem label="pnpm">
+      ```bash
+      pnpm add @xcheckout/widget
+      ```
+  </TabItem>
+  <TabItem label="bun">
+      ```bash
+      bun add @xcheckout/widget
+      ```
+  </TabItem>
+</Tabs>
+
+## Use Express Checkout Widget
+
+First you must import the widget:
+
+```ts app.ts
+import { Widget } from "@xcheckout/widget";
+```
+
+Next, add an HTML element _with an id_ where the widget will be attached.
+
+```html app.ts
+<div id="xco-widget"></div>
+```
+
+Finally, instantiate the widget and call the `mount` method with the HTML element's _id_:
+
+```ts app.ts
+new Widget({
+  entityId: "your-purse-entity-id", // your Purse entity ID
+  manager: manager, // an implementation of ExpressCheckoutManager
+}).mount("xco-widget");
+```
+
+As you might notice, you need to :
+
+- provide your Purse entity ID.
+- provide the url of the XCO domain.
+- create an ExpressCheckoutManager to interact with the widget.
+
+How to do so is explained in the [next section](./usecase).

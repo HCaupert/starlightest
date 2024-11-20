@@ -1,0 +1,49 @@
+/* Generated from https://starlight.astro.build/guides/css-and-tailwind/#color-theme-editor */
+/* Dark mode colors. */
+:root {
+    --sl-color-accent-low: #002b26;
+    --sl-color-accent: #007b70;
+    --sl-color-accent-high: #81dccf;
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #e2f1f2;
+    --sl-color-gray-2: #b4c6c7;
+    --sl-color-gray-3: #6e9395;
+    --sl-color-gray-4: #3c5f61;
+    --sl-color-gray-5: #1b3f41;
+    --sl-color-gray-6: #072d2f;
+    --sl-color-black: #0c1b1c;
+}
+
+/* Light mode colors. */
+:root[data-theme='light'] {
+    --sl-color-accent-low: #a4e6dc;
+    --sl-color-accent: #007369;
+    --sl-color-accent-high: #003b35;
+    --sl-color-white: #0c1b1c;
+    --sl-color-gray-1: #072d2f;
+    --sl-color-gray-2: #1b3f41;
+    --sl-color-gray-3: #3c5f61;
+    --sl-color-gray-4: #6e9395;
+    --sl-color-gray-5: #b4c6c7;
+    --sl-color-gray-6: #e2f1f2;
+    --sl-color-gray-7: #f0f8f8;
+    --sl-color-black: #ffffff;
+}
+
+[data-has-hero] .page {
+    background: linear-gradient(215deg, var(--sl-color-gray-6), transparent 40%),
+    radial-gradient(var(--sl-color-gray-6), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
+    radial-gradient(var(--sl-color-gray-6), transparent 65%) no-repeat 50% calc(100% + 20rem) /
+			60rem 30rem;
+}
+
+[data-has-hero] header {
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+}
+
+[data-has-hero] .hero > img {
+    filter: drop-shadow(0 0 3rem var(--sl-color-gray-6));
+}
